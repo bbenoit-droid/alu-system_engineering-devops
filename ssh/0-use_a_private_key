@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+#Explanation ssh: starts an SSH connection , -i : tells SSH to use the private key located at ~/.ssh/school. ,ubuntu@172.20.0.11 : connects as the user ubuntu to the specified server.
 ssh -i ~/.ssh/school ubuntu@172.20.0.11
