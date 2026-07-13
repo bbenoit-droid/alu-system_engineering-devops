@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Configure Nginx with a custom HTTP response header
+# Ignore SC2154 for shellcheck
+
+# Install nginx if not installed
+apt-get update -y
+apt-get install -y nginx
+
+# Get server hostname
+HOSTNAME=$(hostname)
+
+# Add custom header configuration
+cat > /etc/nginx/conf.d/custom_header.conf <<EOF
+add_header X-Served-By "$HOSTNAME" always;
+EOF
+
+# Test nginx configuration
+nginx -t
+
+# Restart nginx
+service nginx restartß
