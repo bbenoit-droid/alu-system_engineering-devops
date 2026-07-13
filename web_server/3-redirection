@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
-#creates a redirection to another page
+# Configures Nginx to redirect /redirect_me
+
+set -e
+
 apt-get update -y
 apt-get install -y nginx
 
-sed -i '/server_name _;/a\
+if ! grep -q "location /redirect_me" /etc/nginx/sites-available/default; then
+    sed -i '/server_name _;/a\
 \
     location /redirect_me {\
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\
     }' /etc/nginx/sites-available/default
+fi
 
-nginx -t && systemctl restart nginx
+nginx -t
+systemctl restart nginx
