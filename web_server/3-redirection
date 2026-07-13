@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 #creates a redirection to another page
+apt-get update -y
+apt-get install -y nginx
+
 sed -i '/server_name _;/a\
 \
     location /redirect_me {\
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\
     }' /etc/nginx/sites-available/default
 
-service nginx restart
+nginx -t && systemctl restart nginx
