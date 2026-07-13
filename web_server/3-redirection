@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#creates a redirection to another page
 sed -i '/server_name _;/a\
 \
     location /redirect_me {\
