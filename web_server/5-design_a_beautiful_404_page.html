@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>404 - Page Not Found</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", "Segoe UI", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #0f172a, #2563eb);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        color: white;
+    }
+
+    .container {
+        text-align: center;
+        max-width: 700px;
+        padding: 40px;
+    }
+
+    .robot {
+        font-size: 100px;
+        animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+        0%,100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    h1 {
+        font-size: 120px;
+        font-weight: 900;
+        letter-spacing: 10px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 18px;
+        opacity: 0.9;
+        line-height: 1.6;
+        margin-bottom: 35px;
+    }
+
+    .button {
+        display: inline-block;
+        text-decoration: none;
+        background: white;
+        color: #2563eb;
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .button:hover {
+        transform: scale(1.1);
+        background: #e0f2fe;
+    }
+
+    .blocks {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .block {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 12px;
+        animation: move 10s infinite linear;
+    }
+
+    .block:nth-child(1){
+        left:10%;
+        top:20%;
+    }
+
+    .block:nth-child(2){
+        right:15%;
+        top:30%;
+        animation-delay:2s;
+    }
+
+    .block:nth-child(3){
+        left:30%;
+        bottom:15%;
+        animation-delay:4s;
+    }
+
+
+    @keyframes move {
+        0% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(-80px) rotate(180deg);
+        }
+
+        100% {
+            transform: translateY(0) rotate(360deg);
+        }
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="blocks">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+</div>
+
+
+<div class="container">
+
+    <div class="robot">
+        🤖
+    </div>
+
+    <h1>404</h1>
+
+    <h2>Ceci n'est pas une page</h2>
+
+    <p>
+        Looks like this page went exploring and got lost in cyberspace.
+        Don't worry, our little robot is searching for it.
+    </p>
+
+
+    <a href="/" class="button">
+        Return Home
+    </a>
+
+</div>
+
+
+</body>
+</html>
